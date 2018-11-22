@@ -1,57 +1,28 @@
 <?php
-$array = scandir('post');
-$files = [];
-foreach ($array as $file) {
-    if ($file === '.') {
-        continue;
-    }
-    if ($file === '..') {
-        continue;
-    }
-    $files[] = $file;
-}
+    include("include/config.php");
+    //rappatriement de tous les articles
+    $articles = getAllArticles();
+    //affichage
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-    <title>Blog Street Art</title>
-</head>
-
-<body>
-    <?php
-include "header.php";
-?>
-    <?php
-require_once 'include/config.php';
-// var_dump($dbh);
-?>
-<header>
-    <!-- <h1>Test</h1> -->
-</header>
-<div class="row">
-    <div class="col-md-12 border">
-    
+<!-- DRAW HTML PAGE -->
+<?php include "header.php"; ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 border">
+        <!--afficher ici ts les articles-->
+        <?php foreach($articles as $article) { ?>
+            <article class="col-sm-6">
+                <h2><?php echo $article['titre']; ?></h2>
+                <p><?php echo $article['commentaire']; ?></p>
+                <form action="delete-post.php" method="POST">
+                    <input type="hidden" name="filename" value="">
+                    <input type="submit" value="delete" class="btn btn-danger">
+                </form>
+                <?php echo '<a href="change-file.php?fichier="><input type="submit" value="modifier" class="btn btn-outline-warning"></a>';?>
+            </article>
+        <?php } ?>
+        </div>
     </div>
 </div>
+<?php include("footer.php"); ?>
 
-
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-</body>
-
-</html>
