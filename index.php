@@ -1,8 +1,8 @@
 <?php
     include("include/config.php");
-    //rappatriement de tous les articles
+    //rapatriement de tous les articles
     $articles = getAllArticles();
-    //affichage
+    //affichage lié à config.php cf aussi copie ds brouillon2.php
 ?>
 <!-- DRAW HTML PAGE -->
 <?php include "header.php"; ?>
