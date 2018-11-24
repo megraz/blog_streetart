@@ -1,5 +1,5 @@
 <?php
-    include("include/config.php");
+    include("functions.php");
     //rapatriement de tous les articles
     $articles = getAllArticles();
     //affichage lié à config.php cf aussi copie ds brouillon2.php

@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <title>Blog Street Art</title>
@@ -13,55 +12,22 @@
 
 <body>
 
-<?php
-session_start();
-if(!isset($_SESSION['utilisateur'])){?>
-<header>
-<nav class="navbar navbar-light" style="background-color: #ffff00; padding: 30px;">
-    <form action="login.php" method="POST" class="formulaire">
-    <label for="name">Username</label>
-    <input type="text" name="pseudo">
-    <label for="pass">Mot de passe</label>
-    <input type="password" name="mdp">
-    <input type="submit" name="action" value="login" class="btn btn-outline-dark">
-    <a href="inscription.html">S'inscrire</a>
-    </form>
-</nav>
-    <section>
-     <ul class="menu">
-     <li><i class="fa fa-bars fa-2x" aria-hidden="true"></i></li>
-     <ul>
-                <li ><a href="create.php">Nouvel article</a>
-                <li ><a href="index.php">Index</a>
-            </ul>
-    </ul>
-</section>
-    
-</header>
-<?php
-}else {
-        echo '<div class="hello">Bonjour '.' '.$_SESSION['utilisateur'];
-        echo'<form action="logout.php" method="POST"><button class="btn btn-success">Se déconnecter</button></form></div>';
-        echo'<section>
-        <ul class="menu">
-            <li><i class="fa fa-bars fa-2x" aria-hidden="true"></i></li>
-               <ul>
-                   <li ><a href="create.php">Nouvel article</a>
-                   <li ><a href="index.php">Index</a>
-               </ul>
-       </ul>
-       </section>';
-    }
+<div class="pos-f-t">
+<nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h4">Galerie</h5>
+      <a class="nav-link" href="index.php"><span class="text-muted">Home</span></a>
+      <a class="nav-link" href="#"><span class="text-muted">Connexion</span></a>
+      <a class="nav-link" href="#"><span class="text-muted">Inscription</span></a>
+      <a class="nav-link" href="#"><span class="text-muted">Categories</span></a>
+      <a class="nav-link" href="#"><span class="text-muted">Carte</span></a>
+      <a class="nav-link" href="create.php"><span class="text-muted">Faire découvrir une oeuvre</span></a>
+    </div>
+  </div>
 
-?>
-       <?php
- /*
- echo "<form action='inscription.php' method='POST' name='inscription'>
-    <fieldset>
-    <p>Entre votre pseudo : <input type='text' name='pseudo'></p>
-    <p>Entre votre Mot de passe : <input type='password' name='mdp'></p>
-    <input type='submit' value='Inscription'>
-    <input type='submit' value='Connexion'>
-    </fieldset>
-    </form>"; */
-    ?>
+</div>
