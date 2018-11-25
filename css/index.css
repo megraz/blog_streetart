@@ -1,9 +1,21 @@
 body {
     font-family: 'Allerta Stencil', sans-serif;
+    /* background-color: #aeafac; */
+    background-image: linear-gradient(to right, #f4f5f4, #a4a5a2);
+    /*#9a9b98*/
 }
 
 h1 {
     font-family: 'Allerta Stencil', sans-serif;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.col-md-6 {
+    background-color: #99f5db;
+    margin-top: 10px;
 }
 
 
@@ -11,6 +23,11 @@ h1 {
 
 .bg-dark {
     background-color: #00e7a5 !important;
+}
+
+.navbar {
+    /*pr modif la hauteur de la navbar*/
+    height: 80px;
 }
 
 

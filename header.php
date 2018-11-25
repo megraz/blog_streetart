@@ -22,8 +22,8 @@
     <div class="bg-dark p-4">
       <h5 class="text-white h4">Galerie</h5>
       <a class="nav-link" href="index.php"><span class="text-muted">Home</span></a>
-      <a class="nav-link" href="#"><span class="text-muted">Connexion</span></a>
-      <a class="nav-link" href="#"><span class="text-muted">Inscription</span></a>
+      <a class="nav-link" href="login.php"><span class="text-muted">Connexion</span></a>
+      <a class="nav-link" href="inscription.php"><span class="text-muted">Inscription</span></a>
       <a class="nav-link" href="#"><span class="text-muted">Categories</span></a>
       <a class="nav-link" href="#"><span class="text-muted">Carte</span></a>
       <a class="nav-link" href="create.php"><span class="text-muted">Faire découvrir une oeuvre</span></a>
