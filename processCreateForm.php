@@ -7,9 +7,10 @@
     //appeler la fonction insert article en lui passant les paramètre filtrer depuis le formulaire.
 
     //affiché bravo à l'utilisateur/trice si tout c'est bien passé.
-    if ($_POST['titre'] =="" ||$_POST['Images'] ==""  ||$_POST['categorie'] ==""  ||$_POST['commentaire'] =="" ){
+    print_r($_POST);
+    die();
+    if ($_POST['titre'] =="" ||!empty($_FILES['Images']['name'])  ||$_POST['categorie'] ==""  ||$_POST['commentaire'] =="" ){
         $titre = $_POST['titre'];
-        $Images = $_POST['Images'];
         $categorie = $_POST['categorie'];
         $commentaire = $_POST['commentaire'];    
     }
@@ -26,7 +27,7 @@
                if (in_array($extension_upload, $extensions_autorisees))
                {
                        // On peut valider le fichier et le stocker définitivement
-                       move_uploaded_file($_FILES['Images']['tmp_name'], '../images/' . basename($_FILES['images']['name']));
+                       move_uploaded_file($_FILES['Images']['tmp_name'], 'images/' . basename($_FILES['images']['name']));
 
                }
        }

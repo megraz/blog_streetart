@@ -29,7 +29,7 @@ if (isset($_POST['filename'])){ //on utilise isset pr vérifier que le fichier e
                             <label for="exampleFormControlFile1"></label>
                             <input type="file" name="Images" class="form-control-file" id="fileupload" value="fileupload">
                         </div>
-                        <select class="form-control form-control-lg">
+                        <select name="categorie" class="form-control form-control-lg">
                             <?php 
                                 foreach($categories as $categorie) { ?>
                                     ?><option value="<?=$categorie['idcategorie']?>"><?=$categorie['nom']?></option><?php
